@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style type="text/css">
+    body{
+      background-color: gray;
+            }
+  </style>
+  <title>Conversion Calculator</title>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center"><b><ul>Unit Converter</ul></b></h1>
+<hr>
+  <div class="row">
+  <div class="col-md-6 offset-md-3 text-center">
+  <label for="measurement-select">
+  </label>
+        <select id="measurement-select" class="form-control">
+        <option value="length" selected>Length</option>
+        </select>
+        </div>
+        </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <label for="input-value">Desired Value:</label>
+        <input id="input-value" type="number" class="form-control" placeholder="Millimeter">
+      </div>
+      <div class="col-md-2 align-self-center text-center">
+      </div>
+      <div class="col-md-4">
+        <label for="output-value"><b>Converted Value:</b></label>
+        <input id="output-value" type="number" class="form-control" disabled>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <button onclick="kilometer()" class="btn btn-danger btn-block">Convert to Kilometers</button>
+      </div>
+      <div class="col-md-4">
+        <button onclick="meter()" class="btn btn-danger btn-block">Convert to Meters</button>
+      </div>
+      <div class="col-md-4">
+        <button onclick="centimeter()" class="btn btn-danger btn-block">Convert to Centimeters</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+     function kilometer() {
+      var input = document.getElementById('input-value').value;
+      var result = parseFloat(input) / 1000000;
+      document.getElementById('output-value').value = result;
+      window.alert('Conversion to Kilometers Successful!');
+    }
+    function meter() {
+      var input = document.getElementById('input-value').value;
+      var result = parseFloat(input) / 1000;
+      document.getElementById('output-value').value = result;
+      window.alert('Conversion to Meters Successful!');
+    }
+     function centimeter() {
+      var input = document.getElementById('input-value').value;
+      var result = parseFloat(input) / 10;
+      document.getElementById('output-value').value = result;
+      window.alert('Conversion to Centimeters Successful!');
+    }
+</script>
+</body>
+</html>
